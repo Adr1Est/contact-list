@@ -10,9 +10,9 @@ const mockData = {
   contactIcon: 'fa-microchip',
   name: 'Adrián',
   lastName: 'Estévez Salamanca',
-  email: 'adrian22est@gmail.com',
+  email: 'test@gmail.com',
   job: 'Full Stack Developer',
-  phone: '660487026',
+  phone: '435734737',
   city: 'Madrid',
   country: 'España'
 };
