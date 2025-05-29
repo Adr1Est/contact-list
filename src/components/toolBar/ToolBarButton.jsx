@@ -1,9 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-const ToolBarButton = ({actionIcon}) => {
-  const handleClick = () => {
-
-  }
+const ToolBarButton = ({actionIcon, handleClick}) => {
 
   return (
     <>

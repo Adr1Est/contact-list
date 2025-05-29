@@ -16,7 +16,7 @@ const ContactList = () => {
 
   return (
     <>
-      <div className='w-full min-h-100 max-h-130 rounded-t-2xl contact-list overflow-y-scroll'>
+      <div className='w-full h-130 rounded-t-2xl contact-list overflow-y-scroll'>
         <ContactCard 
           contactIcon={mockData.contactIcon}
           name={mockData.name}
