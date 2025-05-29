@@ -64,6 +64,16 @@ const NewContactForm = ({setContactList}) => {
     setContactList(contactList)
   }
 
+  const iconsForOptions = [
+    {name: "Select icon", value: "0"},
+    {name: "Microchip", value: "fa-microchip"},
+    {name: "Code", value: "fa-code"},
+    {name: "House", value: "fa-house"},
+    {name: "Coffe Mug", value: "fa-mug-hot"},
+    {name: "Top Secret", value: "fa-user-secret"},
+    {name: "Gaming Duo", value: "fa-gamepad"},
+  ]
+
   useEffect(()=>{
     uuidFromReactUUID()
   }, [])
@@ -73,10 +83,7 @@ const NewContactForm = ({setContactList}) => {
       <div className='flex flex-col justify-center w-full h-130 rounded-t-2xl contact-list'>
         <div className="flex flex-col justify-center items-center p-4">
           <select className="w-full bg-sky-100 rounded-2xl p-2 mb-1" id="iconInput" onChange={inputOnChange}>
-            <option value="0">Select icon</option>
-            <option value="fa-microchip">Microchip </option>
-            <option value="fa-code">Code</option>
-            <option value="fa-house">House</option>
+            {iconsForOptions.map((icon) => <option value={icon.value}>{icon.name}</option>)}
           </select>
           <CreateInput inputType="text" inputId="nameInput" inputPlaceholder="Name" inputValue={contactName} handleChange={inputOnChange}/> 
           <CreateInput inputType="text" inputId="lastNameInput" inputPlaceholder="Last name" inputValue={contactLastName} handleChange={inputOnChange}/> 

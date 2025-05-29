@@ -1,12 +1,12 @@
 import './App.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faHouse, faUserXmark, faUserPen, faUserPlus, faMicrochip, faBan, faCode } from '@fortawesome/free-solid-svg-icons'
+import { faHouse, faUserXmark, faUserPen, faUserPlus, faMicrochip, faBan, faCode, faMugHot, faUserSecret, faGamepad } from '@fortawesome/free-solid-svg-icons'
 import ToolBar from './components/toolBar/ToolBar'
 import { useEffect, useState } from 'react'
 import { getContactList } from './funciones-api/funciones-api.js/'
 import { Outlet } from 'react-router'
 
-library.add(faHouse, faUserXmark, faUserPen, faUserPlus, faMicrochip, faBan, faCode)
+library.add(faHouse, faUserXmark, faUserPen, faUserPlus, faMicrochip, faBan, faCode, faMugHot, faUserSecret, faGamepad)
 
 function App() {
   const [contactList, setContactList] = useState([])
