@@ -7,7 +7,6 @@ app.use(express.json());
 
 const mockData = {
   key: '2352342zsx423',
-  id: 1,
   contactIcon: 'fa-microchip',
   name: 'Adrián',
   lastName: 'Estévez Salamanca',
