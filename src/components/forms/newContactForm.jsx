@@ -1,10 +1,10 @@
 import CreateInput from "./CreateInput"
 import { useEffect, useState } from "react"
-import { createNewContact, getContactList } from "../../funciones-api/funciones-api"
+import { createNewContact } from "../../funciones-api/funciones-api"
 import uuid from 'react-uuid';
 import { useNavigate } from "react-router";
 
-const NewContactForm = ({setContactList}) => {
+const NewContactForm = () => {
   const [contactIcon, setContactIcon] = useState("")
   const [contactName, setContactName] = useState("")
   const [contactLastName, setContactLastName] = useState("")

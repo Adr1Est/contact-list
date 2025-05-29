@@ -8,7 +8,7 @@ const router = createBrowserRouter([
     path: '/',
     Component: App,
     children: [
-      { index: true,Component: ContactList },
+      { index: true, Component: ContactList },
       { path: 'new-contact', Component: NewContactForm },
     ]
   }
