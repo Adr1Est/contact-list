@@ -2,27 +2,27 @@ import './App.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHouse, faUserXmark, faUserPen, faUserPlus, faMicrochip, faBan, faCode, faMugHot, faUserSecret, faGamepad } from '@fortawesome/free-solid-svg-icons'
 import ToolBar from './components/toolBar/ToolBar'
-import { useEffect, useState } from 'react'
-import { getContactList } from './funciones-api/funciones-api.js/'
 import { Outlet } from 'react-router'
+import { useEffect } from 'react'
+import { getContactList } from './funciones-api/funciones-api'
+import useGlobalReducer from './hooks/useGlobalReducer'
 
 library.add(faHouse, faUserXmark, faUserPen, faUserPlus, faMicrochip, faBan, faCode, faMugHot, faUserSecret, faGamepad)
 
 function App() {
-  const [contactList, setContactList] = useState([])
-
-  useEffect(()=>{
-    const getContactListFromAPI = async () => {
-      const list = await getContactList()
-      setContactList(list)
-    }
-
-    getContactListFromAPI()
-  }, [])
+  const {store, dispatch} = useGlobalReducer()
 
   useEffect(() => {
-    console.log(contactList);
-  }, [contactList])
+    const contactListFromAPI = async () => {
+      const listData = await getContactList()
+      dispatch({type: "UPDATE_LIST", payload: listData})
+    }
+    contactListFromAPI()
+  }, [])
+
+  useEffect(()=>{
+    console.log(store.contactList);
+  },[store.contactList])
 
   return (
     <>
