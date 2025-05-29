@@ -1,0 +1,12 @@
+#list-container::-webkit-scrollbar{
+  width: 4px;
+}
+
+#list-container::-webkit-scrollbar-thumb{
+  background-color: #8EC5FF;
+  border-radius: 10px;
+}
+
+#list-container::-webkit-scrollbar-thumb:hover{
+  background-color: #2375cc;
+}

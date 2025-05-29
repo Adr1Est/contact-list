@@ -1,3 +1,4 @@
+import './contactListRender.css'
 import useGlobalReducer from "../../hooks/useGlobalReducer";
 import { getContactList, deleteContact } from "../../funciones-api/funciones-api";
 import ContactCard from "./contactCard"
@@ -22,7 +23,7 @@ const ContactList = () => {
 
   return (
     <>
-      <div className='w-full h-130 rounded-t-2xl contact-list overflow-y-scroll'>
+      <div id="list-container" className='w-full h-130 rounded-t-2xl contact-list overflow-y-auto'>
         {store.contactList.map((contact, index) => (
           <ContactCard 
             key={contact.key}
