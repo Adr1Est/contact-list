@@ -23,6 +23,13 @@ app.get('/contacts', (req, res) => {
   res.json(contactList);
 });
 
+app.get('/contacts/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const contact = contactList.find((contact, index) => index === id);
+  if (!contact) return res.status(404).send('Error 404: Contact not found');
+  res.json(contact);
+});
+
 app.post('/contacts', (req, res) => {
   const newContact = req.body;
   contactList.push(newContact);

@@ -7,6 +7,15 @@ const getContactList = async () => {
   return data;
 }
 
+const getContactListById = async (contactId) => {
+  const response = await fetch(`http://localhost:3000/contacts/${contactId}`, {
+    method: "GET"
+  });
+
+  const data = await response.json();
+  return data;
+}
+
 const createNewContact = async (contactData) => {
   const response = await fetch('http://localhost:3000/contacts', {
     method: "POST",
@@ -43,4 +52,4 @@ const deleteContact = async (contactId) => {
 }
 
 
-export { getContactList, createNewContact, updateContact, deleteContact }
+export { getContactList, getContactListById, createNewContact, updateContact, deleteContact }

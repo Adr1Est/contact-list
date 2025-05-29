@@ -1,9 +1,12 @@
 import useGlobalReducer from "../../hooks/useGlobalReducer";
 import { getContactList, deleteContact } from "../../funciones-api/funciones-api";
 import ContactCard from "./contactCard"
+import { useNavigate } from "react-router";
 
 const ContactList = () => {
   const {store, dispatch} = useGlobalReducer()
+
+  const navigate = useNavigate()
 
   const onDelete = async (id) => {
     console.log(id);
@@ -13,7 +16,9 @@ const ContactList = () => {
     console.log(`Deleted contact with id: ${id}`)
   }
 
-  const onEdit = () => {}
+  const onEdit = (id) => {
+    navigate(`/edit-contact/${id}`)
+  }
 
   return (
     <>
