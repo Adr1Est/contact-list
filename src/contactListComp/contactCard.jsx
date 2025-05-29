@@ -4,7 +4,7 @@ const ContactCard = ({contactIcon, name, lastName, phoneNumber, email, city, cou
 
   return (
     <>
-      <div className="flex flex-row p-2">
+      <div className="flex flex-row p-2 rounded-2xl bg-white mb-1">
         <div className="flex justify-center items-center w-1/5 text-3xl">
           <FontAwesomeIcon icon={contactIcon}/>
          </div>
@@ -20,10 +20,10 @@ const ContactCard = ({contactIcon, name, lastName, phoneNumber, email, city, cou
           <p className=''>{job}</p>
         </div>
         <div className="flex flex-col items-end gap-1 w-1/5">
-          <button>
+          <button className='hover:text-red-400'>
             <FontAwesomeIcon icon="fa-user-xmark"/>
           </button>
-          <button>
+          <button className='hover:text-green-400'>
             <FontAwesomeIcon icon="fa-user-pen"/>
           </button>
         </div>
