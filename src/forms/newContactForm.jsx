@@ -70,7 +70,7 @@ const NewContactForm = ({setContactList}) => {
 
   return (
     <>
-      <div className='w-full min-h-100 max-h-130 rounded-t-2xl contact-list overflow-y-scroll'>
+      <div className='w-full min-h-100 max-h-130 rounded-t-2xl contact-list'>
         <div className="flex flex-col justify-center items-center p-4">
           <select className="w-full bg-sky-100 rounded-2xl p-2 mb-1" id="iconInput" onChange={inputOnChange}>
             <option value="0">Select icon</option>
