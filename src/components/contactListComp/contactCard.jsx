@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const ContactCard = ({contactIcon, name, lastName, phoneNumber, email, city, country, job}) => {
+const ContactCard = ({contactIcon, name, lastName, phoneNumber, email, city, country, job, handleDelete, handleEdit, contactId}) => {
 
   return (
     <>
@@ -20,10 +20,10 @@ const ContactCard = ({contactIcon, name, lastName, phoneNumber, email, city, cou
           <p className=''>{job}</p>
         </div>
         <div className="flex flex-col items-end gap-1 w-1/5">
-          <button className='hover:text-red-400'>
+          <button className='hover:text-red-400' onClick={() => handleDelete(contactId)}>
             <FontAwesomeIcon icon="fa-user-xmark"/>
           </button>
-          <button className='hover:text-green-400'>
+          <button className='hover:text-green-400' onClick={() => handleEdit(contactId)}>
             <FontAwesomeIcon icon="fa-user-pen"/>
           </button>
         </div>

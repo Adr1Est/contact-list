@@ -21,7 +21,7 @@ const createNewContact = async (contactData) => {
 }
 
 const updateContact = async (contactId, newContactData) => {
-  const response = await fetch(`http://localhost:3000/contacts/:${contactId}`, {
+  const response = await fetch(`http://localhost:3000/contacts/${contactId}`, {
     method: "PUT",
     body: JSON.stringify(newContactData),
     headers: {
@@ -34,8 +34,8 @@ const updateContact = async (contactId, newContactData) => {
 }
 
 const deleteContact = async (contactId) => {
-  const response = await fetch(`http://localhost:3000/contacts/:${contactId}`, {
-    method: "DELETE",
+  const response = await fetch(`http://localhost:3000/contacts/${contactId}`, {
+    method: "DELETE"
   });
 
   const data = await response.json();

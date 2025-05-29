@@ -12,17 +12,17 @@ library.add(faHouse, faUserXmark, faUserPen, faUserPlus, faMicrochip, faBan, faC
 function App() {
   const {store, dispatch} = useGlobalReducer()
 
-  useEffect(() => {
-    const contactListFromAPI = async () => {
+  useEffect(()=>{
+    const getListFromAPI = async () => {
       const listData = await getContactList()
-      dispatch({type: "UPDATE_LIST", payload: listData})
+      dispatch( {type: "UPDATE_LIST", payload: listData} )
     }
-    contactListFromAPI()
+    getListFromAPI()
   }, [])
 
-  useEffect(()=>{
-    console.log(store.contactList);
-  },[store.contactList])
+  useEffect(() => {
+    console.log(store.contactList)
+  }, [store.contactList])
 
   return (
     <>

@@ -3,6 +3,8 @@ import { useEffect, useState } from "react"
 import { createNewContact } from "../../funciones-api/funciones-api"
 import uuid from 'react-uuid';
 import { useNavigate } from "react-router";
+import useGlobalReducer from "../../hooks/useGlobalReducer";
+import { getContactList } from "../../funciones-api/funciones-api";
 
 const NewContactForm = () => {
   const [contactIcon, setContactIcon] = useState("")
@@ -45,6 +47,8 @@ const NewContactForm = () => {
     setContactCountry("")
   }
   
+  const {store, dispatch} = useGlobalReducer()
+
   const createContact = async () => {
     uuidFromReactUUID()
     if(contactIcon === "0" || contactIcon === "" || contactName === "" || contactLastName === "" || contactEmail === "" || contactJob === "" || contactPhone === "" || contactCity === "" || contactCountry === ""){
@@ -63,6 +67,8 @@ const NewContactForm = () => {
     }
 
     await createNewContact(newContactInfo)
+    const listData = await getContactList()
+    dispatch({type: "UPDATE_LIST", payload: listData})
     navigate('/')
   }
 
