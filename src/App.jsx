@@ -3,10 +3,26 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHouse, faUserXmark, faUserPen, faUserPlus, faMicrochip, faBan } from '@fortawesome/free-solid-svg-icons'
 import ContactList from './contactListComp/contactListRender'
 import ToolBar from './toolBar/ToolBar'
+import { useEffect, useState } from 'react'
+import { getContactList } from './funciones-api/funciones-api.js/'
 
 library.add(faHouse, faUserXmark, faUserPen, faUserPlus, faMicrochip, faBan)
 
 function App() {
+  const [contactList, setContactList] = useState([])
+
+  useEffect(()=>{
+    const getContactListFromAPI = async () => {
+      const list = await getContactList()
+      setContactList(list)
+    }
+
+    getContactListFromAPI()
+  }, [])
+
+  useEffect(() => {
+    console.log(contactList);
+  }, [contactList])
 
   return (
     <>
