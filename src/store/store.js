@@ -1,4 +1,4 @@
-export const initialState = () => ({ contactList: [] });
+export const initialStore = () => ({ contactList: [] });
 
 export default function storeReducer(state, action) {
   switch (action.type) {
