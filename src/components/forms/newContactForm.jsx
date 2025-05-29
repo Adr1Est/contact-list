@@ -2,6 +2,7 @@ import CreateInput from "./CreateInput"
 import { useEffect, useState } from "react"
 import { createNewContact, getContactList } from "../../funciones-api/funciones-api"
 import uuid from 'react-uuid';
+import { useNavigate } from "react-router";
 
 const NewContactForm = ({setContactList}) => {
   const [contactIcon, setContactIcon] = useState("")
@@ -13,6 +14,8 @@ const NewContactForm = ({setContactList}) => {
   const [contactCity, setContactCity] = useState("")
   const [contactCountry, setContactCountry] = useState("")
   const [UUDIForKey, setUUDIForKey] = useState(null)
+
+  const navigate = useNavigate()
   
   const inputOnChange = (event) => {
     const {id, value} = event.target
@@ -60,8 +63,7 @@ const NewContactForm = ({setContactList}) => {
     }
 
     await createNewContact(newContactInfo)
-    const contactList = await getContactList()
-    setContactList(contactList)
+    navigate('/')
   }
 
   const iconsForOptions = [
